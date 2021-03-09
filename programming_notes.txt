@@ -1,0 +1,298 @@
+URL to Quiz: https://watchandcode.com/courses/350615/lectures/22887997 
+
+    var array1 = ['yo', 'hi'];
+    array1[0] = array1[1];
+
+    var array2 = ['bye', 'later'];
+    array2.splice(1, 1);
+
+    var array3 = [];
+    array3[0] = array1[0];
+    array3[1] = array2[0];
+
+    console.log(array3);
+    // prints out ['hi', 'bye']
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    URL to Quiz: https://watchandcode.com/courses/350615/lectures/23512381
+    var todos = ['Item 1', 'Item 2', 'Item 3'];
+
+    console.log(todos);
+
+    todos.push('Item 4');
+
+    todos[0] = 'Item 1 updated';
+
+    todos.splice(0, 1);
+
+    Answer: every line of code ends with a semicolon.
+
+    1. Functions group multiple lines of code under a single name.
+    2. When you run a function, you can provide the function with data.
+
+    Comments in javascript are preceded by two forward slashes //.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    URL to Quiz: https://watchandcode.com/courses/350615/lectures/22896261
+
+    function exampleFunction(a, b) {
+    console.log(a);
+    console.log(b);
+}
+
+Answer:
+exampleFunction();
+VM391:2 undefined
+VM391:3 undefined
+undefined
+exampleFunction('Item 1');
+VM391:2 Item 1
+VM391:3 undefined
+undefined
+exampleFunction('Item 1','Item 2');
+VM391:2 Item 1
+VM391:3 Item 2
+undefined
+exampleFunction('Item 1','Item 2', 'Item 3');
+VM391:2 Item 1
+VM391:3 Item 2
+undefined
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+URL to Quiz: https://watchandcode.com/courses/350615/lectures/23007760
+
+var myArray = [{name: 'Gordon'}];
+
+function exampleFunction(thing) {
+  thing.name = 'changed by exampleFunction';
+  
+  thing.thing = {name: 'new thing'};
+}
+
+exampleFunction(myArray[0]);
+exampleFunction(myArray[0].thing);
+
+Answer:
+At some point, myArray[0].thing.name will be equal to 'new thing'.
+After the code runs, myArray[0].thing.thing.name will be equal to 'new thing'.
+
+Comparison (are 2 things equal to each other?)
+true === true (is true equal to true? True)
+
+true === false (Is true equal to false? False)
+
+If statement:
+if (true){
+    this code will run if condition is true.
+}
+
+if (false) {
+    the code will not run.
+}
+
+if/else statement:
+if (condition){
+    will run if condition is true.
+} else {
+    will run if condition is false.
+}
+
+URL to Quiz: https://watchandcode.com/courses/350615/lectures/23008880
+
+var myBoolean = false;
+
+if (myBoolean) {
+  myBoolean = false;
+  console.log(myBoolean);
+}
+
+if (myBoolean === false) {
+  myBoolean = true;
+  console.log(myBoolean);
+}
+
+if (myBoolean) {
+  myBoolean = true;
+} else {
+  myBoolean = false;
+  console.log(myBoolean);
+}
+
+if (myBoolean) {
+  myBoolean = false;
+  console.log(myBoolean);
+}
+
+if (myBoolean === false) {
+  myBoolean = true;
+  console.log(myBoolean);
+}
+
+if (myBoolean) {
+  myBoolean = true;
+} else {
+  myBoolean = false;
+  console.log(myBoolean);
+}
+Answer: 1 time
+
+Javascript Data Types:
+
+1. Objects
+    -{} // todoList, arrays, functions 
+2. Primitives (building blocks)
+    - String // 'Look this string!'
+    -Number // 1,2,3,4,5
+    -Boolean // true, false
+    -Undefined // value that hasn't been set 
+    -Null // 'No value'
+
+Primitives can be compared to other primitives. But objects cannot be compared to other objects because objects are references to the memory address of the items inside of the object. So if an object is an array of data, the object is referring to the location in computer memory. Therefore even when two objects are identical they will never be equal to each other. However, the values(primitives) inside the object can be equal to each other.
+
+How are primitives and objects stored inside of variables?
+Code Example 1:
+var Primitive = 10;
+Primitive
+10
+var Object = {name: 'Cora'};
+Object: memory address 1
+{name: 'Cora'}
+
+Code Example 2:
+var myHouse ={ color: 'blue'};
+myHouse.color = 'red';
+myHouse = {color:'red'}
+
+Code Example 3:
+var myHouse = {color: 'blue'};
+var color = myHouse.color;
+color= 'red';
+myHouse.color='blue'
+
+Code Example 4:
+var myHouse1 = {color: 'blue'};
+myHouse1= {color:'blue'};
+var myHouse2 = myHouse1;
+myHouse2 = {color: 'blue'}
+myHouse2.color ='red';
+myHouse2= {color:'red'};
+myHouse1.color='blue';
+myHouse2.color='red';
+
+Code Example 5:
+var myHouse1 = {color: 'blue'};
+var myHouse2 = {color: 'blue'};
+myHouse2.color = 'red';
+myHouse2 = {color:'red'}
+
+Quiz URL: https://watchandcode.com/courses/350615/lectures/23090550
+[] If everything is true ==> change everything to false
+[] Expectations, go through line by line
+[] Verify expectations by running the code
+
+[] If everything is false ==> change everything to true
+[] Expectations, go through line by line
+[] Verify expectations by running the code
+
+[] If mixed ==> change everything to true
+[] Expectations, go through line by line
+[] Verify expectations by running the code
+
+[true, true] => [false,false]
+
+function weirdToggleAll() {
+  var completedTodos = 0;
+  var allCompleted = true;
+
+  for (var i = 0; i < todos.length; i++) {
+    if (todos[i].completed !== false) {
+      completedTodos++;
+    }
+
+    if (completedTodos !== i + 1) {
+      allCompleted = false;
+    }
+  }
+
+  if (allCompleted === true) {
+    for (var i = 0; i < todos.length; i++) {
+      todos[i].completed = false;
+    }
+  } else {
+    for (var i = 0; i < todos.length; i++) {
+      todos[i].completed = true;  
+    }
+  }
+
+  displayTodos();
+}
+Answer: get the same results as ToggleAll();
+
+function demoFunction(){}
+
+var experiment1= demoFunction; // demoFunction is called
+var experiment2= demoFunction(); // nothing happens
+
+function demoFunctionThatReturnsAString(){
+  return'a string';
+}
+var experiment3= demoFunctionThatReturnsAString;// demoFunctionThatReturnsAString is called
+var experiment4= demoFunctionThatReturnsAString();// 'a string' is printed in the console
+
+experiment4 is equal to 'a string' because experiment4 is being set equal to the result of the function being called.
+
+function demoFunctionThatReturnsUndefined(){
+    return undefined;
+}
+
+var experiment5=demoFunctionThatReturnsUndefined; // the function is called
+var experiment6=demoFunctionThatReturnsUndefined(); // undefined is printed 
+
+// 'return' inserts a value (whatever comes after return) where the function was called.
+
+debugger; calls the debugger in the console
+
+function logThis(thing){
+  console.log(thing);
+}
+logThis(demoFunctionThatReturnsAString);// logs the entire function.
+
+logThis(demoFunctionThatReturnsAString());
+
+var displayTodosButton = document.getElementById("display-todos-button");
+displayTodosButton.addEventListener('click', displayTodos());//the function displayTodos will be called and the button functionality will not work.
+
+var toggleAllButton = document.getElementById('toggle-all-button');
+toggleAllButton.addEventListener('click', toggleAll());// the function toggleAll will be called and the button functionality will not work.
+
+Quiz URL: 
+debugger;
+function function1(inputFunction, inputString) {  
+  return inputFunction(inputString);
+}
+function function2(thing) {
+  return thing;
+}
+var experiment = function1(function2, 'yolo');
+
+experiment='yolo';
+
+Quiz URL: https://watchandcode.com/courses/350615/lectures/23146189
+
+    var input1 = document.getElementById('input-1');
+    var input1Value = input1.value;
+    input1Value = 'changed';
+
+    console.log(input1Value);
+
+    var input2 = input1;
+    input2.value = 'input 2';
+
+    console.log(input2.value);
+
+    input1.value = '';
+    input2.value = ''; 
+
+    console.log(input1.value);
+    console.log(input2.value);
+
+    Answer: 
+    changed
+    input2

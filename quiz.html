@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz</title>
+  </head>
+  
+  <body> 
+    <input id="input-1">
+    <script> 
+    var input1 = document.getElementById('input-1');
+    var input1Value = input1.value;
+    input1Value = 'changed';
+
+    console.log(input1Value);
+
+    var input2 = input1;
+    input2.value = 'input 2';
+
+    console.log(input2.value);
+
+    input1.value = '';
+    console.log(input1.value);
+    input2.value = ''; 
+    console.log(input2.value);
+
+    </script>
+  </body>
+</html>
