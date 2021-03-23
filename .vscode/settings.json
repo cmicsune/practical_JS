@@ -1,4 +1,5 @@
 {
     "editor.tabSize": 2,
-    "editor.fontSize": 14
+    "editor.fontSize": 14,
+    "python.pythonPath": "/Users/coramicsunescu/opt/anaconda3/envs/pythoncopy/bin/python"
 }
