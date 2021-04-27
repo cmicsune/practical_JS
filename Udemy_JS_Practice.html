@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JS Variables</title>
+    <title>JS</title>
   </head>
+  <h1> JavaScript Variables</h1>
   <body> 
     <script>
       // Camel case(Recommended for JavaScript)
@@ -23,5 +24,135 @@
       //Names cannot be reserved keywords
       //var var
     </script>
+  <h1>JS Numbers</h1>
+  <script>
+    var num1= 10; //number, stored in 64 bit
+    var num2= 10.9; //decimal number
+    console.log(typeof(num1))
+    console.log(typeof(num2))
+    //Addition
+    var num3= 15;
+    var sum= num3+num1+num2;
+    console.log(sum);
+
+    //Subtraction
+    var diff= num3-num1;
+    console.log(diff);
+
+    //Multiplication
+    var mul= num3*num1;
+    console.log(mul);
+
+    //Division
+    var div= num3/num1;
+    console.log(div);
+
+    //Division by zero yields infinity
+    var divByZero = num3/0;
+    console.log(divByZero);
+    console.log(typeof(divByZero));
+
+    // NAN not a number
+    var mulByString = num3* 'A';
+    console.log(mulByString);
+    console.log(typeof(mulByString));
+  </script>
+  <h1>In-built Number Functions</h1>
+  <script>
+
+    //toString() number as input and returns a string
+    var num1=10;
+    var num2= 20.3;
+
+    console.log(num1.toString())
+    console.log(num2.toString())
+
+    //parseInt() string numeral as input and returns a number
+    var strNum1 ="10";
+    var strNum2 = "11.5";
+
+    console.log(parseInt(strNum1));
+    console.log(parseInt(strNum2));
+
+    //parseFloat() string numeral as input and returns a float number
+    console.log(parseFloat(strNum2));
+
+    //toFixed() takes a floating and rounds off to given position
+    var strFloat= 87.98653;
+    console.log(strFloat.toFixed())
+    console.log(strFloat.toFixed(2))//round off to 2 decimal places
+  </script>
+  <h1>JS Strings</h1>
+  <script>
+    //set of by double or single quotes, cannot be used interchangeably
+    var myFirstString= "I love java";
+    console.log(typeof(myFirstString))
+
+    var mySecondString= 'We will learn together'
+    console.log(typeof(mySecondString))
+
+    // double quotes in strings need to be set off by backward slashes
+    var doubleQuoteString= "This is a \"Javascript\" string"
+    console.log(doubleQuoteString)
+
+    var singleQuoteString='This is a \'Javascript\' string'
+    console.log(singleQuoteString)
+
+    // single quotes can be used inside double quotes and vice versa
+    var doubleQuoteString2= "This is a 'Javascript' string"
+    var singleQuoteString2= 'This is a "Javascript" string'
+
+    // length returns length of a string
+    var firstString= "This is a string for Javascript functions"
+    console.log(firstString.length)
+
+    // indexOf() finds the index of one string inside another string
+    console.log(firstString.indexOf('Javascript'))
+
+    //lastIndexOf() provides last index of a string inside another string
+    console.log(firstString.lastIndexOf('Javascript'))
+
+    // slice()gets a part of our string(start, end)
+    console.log(firstString.slice(0,5))
+    console.log(firstString.slice(-10))
+
+    //substr(startPos,length) gets a sub string
+    console.log(firstString.substr(0,4))
+
+    //toUpperCase() converts lowercase to uppercase characters
+    var sampleString= "This is a Javascript tutorial"
+    console.log(sampleString.toUpperCase())
+
+    //toLowerCase() converts uppercase to lowercase
+    console.log(sampleString.toLowerCase())
+
+    //concat() merges two or more strings
+    var firstName= "Javascript"
+    var lastName= "Playground"
+    console.log(firstName.concat(lastName))
+
+    //We can also use '+' to concat 2 or more strings
+    console.log(firstName+' '+lastName)
+
+    //trim() removes extra spaces
+    var extraString= "       my string           "
+    console.log(extraString.trim())
+
+    //charAt() this takes a position as an argument and returns the character at that postion.
+    var charsample= "This is my test string"
+    console.log(charsample.charAt(5))
+
+    //split() splits our string on the basis of the arguments passed
+    console.log(charsample.split(' '))
+  </script>
+
+  <h1> Null and Undefined Values</h1>
+  <script>
+    console.clear()
+    var myVar// myVar holds no value
+    console.log(myVar)
+    myVar= null// myVar holds the value null
+    console.log(myVar)
+  </script>
   </body>
 </html>
